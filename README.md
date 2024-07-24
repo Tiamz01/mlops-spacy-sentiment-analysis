@@ -35,10 +35,23 @@ For this project I chose to work with a much smaller subset - only years 2020-20
 ## 🎯 Goals
 
 This is my MLOps project started during [MLOps ZoomCamp](https://github.com/DataTalksClub/mlops-zoomcamp)'24.
-And **the main goal** is straight-forward: build an end-to-end Machine Learning project - load data, analyze it, preprocess, train ML model, test it, deploy it, monitor performance.  
+And **the main goal** is straight-forward: build an end-to-end Machine Learning project: 
+- choose dataset, 
+- load & analyze data, preprocess it, 
+- train & test ML model, 
+- create a model training pipeline, 
+- deploy the model, 
+- finally monitor performance. 
+- And follow best practices!
 
 Dataset **Reviews** (original) contains user's ratings from 1 to 5. I used book review texts with ratings 1-3 as examples of negative sentiment, and 4-5 as positive. Actually "4" is a bit tricky, because many readers described partly negative reasons why they didn't gave "5". Samples are [here](/data).
 
 Thanks to MLOps ZoomCamp for the reason to learn many new tools! 
 
 ## :toolbox: Tech stack
+
+- Docker and docker-compose. All dockerized apps use default bridge network (172.17.0.x). 
+- MLFlow for ML experiment tracking
+- Prefect for ML workflow orchestration
+
+## 🚀 Instructions to deploy

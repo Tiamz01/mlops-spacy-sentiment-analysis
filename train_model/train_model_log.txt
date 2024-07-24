@@ -1,0 +1,683 @@
+00:56:57.278 | INFO    | prefect.engine - Created flow run 'private-wapiti' for flow 'ml-workflow'
+
+Loading dataset...
+
+Filtered number of records ([2021]): 66667 / 68739 = 96.99%
+
+ by rating
+5.0    44115
+4.0    13127
+3.0     5124
+2.0     2414
+1.0     1887
+
+ by sentiment
+1    57242
+0     9425
+00:56:57.695 | INFO    | Flow run 'private-wapiti' - Created task run 'spacy_run_experiment-0' for task 'spacy_run_experiment'
+00:56:57.696 | INFO    | Flow run 'private-wapiti' - Executing 'spacy_run_experiment-0' immediately...
+
+Starting experiment [optimizer Adam.v1, data [2021]] in ./spacy_proj...
+
+Preprocessing dataset...
+ Preprocessed!
+
+Balancing dataset...
+ by sentiment
+1    57242
+0     9425
+
+Total: 66667 // Min subset: 9425 // Split: train 15080 + dev 3771
+ Data saved to ./spacy_proj/corpus/ and ready for training.
+
+[38;5;4mℹ Saving to output directory: spacy_proj/training[0m
+[38;5;4mℹ Using CPU[0m
+[1m
+=========================== Initializing pipeline ===========================[0m
+[38;5;2m✔ Initialized pipeline[0m
+[1m
+============================= Training pipeline =============================[0m
+[38;5;4mℹ Pipeline: ['textcat'][0m
+[38;5;4mℹ Initial learn rate: 5e-05[0m
+E    #       LOSS TEXTCAT  CATS_SCORE  SCORE 
+---  ------  ------------  ----------  ------
+  0       0          0.25       44.53    0.45
+  0     200         49.58       75.22    0.75
+  0     400         48.37       76.03    0.76
+  0     600         46.82       73.63    0.74
+  0     800         46.27       76.86    0.77
+  0    1000         44.82       78.10    0.78
+  0    1200         43.68       78.75    0.79
+  0    1400         42.20       79.70    0.80
+  0    1600         41.08       79.58    0.80
+  0    1800         39.64       80.08    0.80
+  1    2000         37.95       81.03    0.81
+  1    2200         36.42       81.04    0.81
+  1    2400         35.54       81.26    0.81
+  2    2600         33.71       81.27    0.81
+  2    2800         33.34       81.32    0.81
+  3    3000         31.84       81.38    0.81
+  3    3200         31.26       81.65    0.82
+  4    3400         30.67       81.75    0.82
+  4    3600         29.60       82.15    0.82
+  4    3800         29.30       82.07    0.82
+  5    4000         28.49       82.05    0.82
+  5    4200         28.21       82.21    0.82
+  6    4400         27.17       82.20    0.82
+  6    4600         27.17       82.34    0.82
+  6    4800         26.63       82.26    0.82
+  7    5000         25.97       82.39    0.82
+  7    5200         25.53       82.34    0.82
+  8    5400         25.19       82.50    0.82
+  8    5600         25.23       82.60    0.83
+  9    5800         24.52       82.55    0.83
+  9    6000         24.24       82.58    0.83
+  9    6200         24.04       82.60    0.83
+ 10    6400         23.96       82.71    0.83
+ 10    6600         22.70       82.76    0.83
+ 11    6800         23.18       82.84    0.83
+ 11    7000         22.66       83.00    0.83
+ 11    7200         22.87       82.87    0.83
+ 12    7400         21.88       82.90    0.83
+ 12    7600         22.20       82.87    0.83
+ 13    7800         22.31       82.95    0.83
+ 13    8000         21.21       82.87    0.83
+ 14    8200         21.48       82.84    0.83
+ 14    8400         21.25       82.90    0.83
+ 14    8600         21.00       82.95    0.83
+[38;5;2m✔ Saved pipeline to output directory[0m
+spacy_proj/training/model-last
+================
+Categorization scores: 0.8300168414204008
+ auc_per_type: {'POS': 0.8982754401410927, 'NEG': 0.8982754401410926}
+model_uri: runs:/93c53b95ab3b4fc5894b4eaad824b3a1/model
+Experiment finished in 164.060 second(s)
+
+00:59:41.836 | INFO    | Task run 'spacy_run_experiment-0' - Finished in state Completed()
+00:59:41.864 | INFO    | Flow run 'private-wapiti' - Created task run 'spacy_run_experiment-1' for task 'spacy_run_experiment'
+00:59:41.865 | INFO    | Flow run 'private-wapiti' - Executing 'spacy_run_experiment-1' immediately...
+
+Starting experiment [optimizer RAdam.v1, data [2021]] in ./spacy_proj2...
+
+Preprocessing dataset...
+ Preprocessed!
+
+Balancing dataset...
+ by sentiment
+1    57242
+0     9425
+
+Total: 66667 // Min subset: 9425 // Split: train 15080 + dev 3771
+ Data saved to ./spacy_proj2/corpus/ and ready for training.
+
+[38;5;4mℹ Saving to output directory: spacy_proj2/training[0m
+[38;5;4mℹ Using CPU[0m
+[1m
+=========================== Initializing pipeline ===========================[0m
+[38;5;2m✔ Initialized pipeline[0m
+[1m
+============================= Training pipeline =============================[0m
+[38;5;4mℹ Pipeline: ['textcat'][0m
+[38;5;4mℹ Initial learn rate: 5e-05[0m
+E    #       LOSS TEXTCAT  CATS_SCORE  SCORE 
+---  ------  ------------  ----------  ------
+  0       0          0.25       49.93    0.50
+  0     200         49.88       64.77    0.65
+  0     400         49.55       74.33    0.74
+  0     600         48.95       73.88    0.74
+  0     800         48.10       75.28    0.75
+  0    1000         47.25       75.11    0.75
+  0    1200         46.47       77.11    0.77
+  0    1400         45.27       78.19    0.78
+  0    1600         44.04       78.30    0.78
+  0    1800         42.97       78.76    0.79
+  1    2000         40.90       79.93    0.80
+  1    2200         39.51       80.72    0.81
+  1    2400         38.45       81.31    0.81
+  2    2600         36.59       81.67    0.82
+  2    2800         35.45       81.59    0.82
+  3    3000         34.37       81.94    0.82
+  3    3200         33.23       82.07    0.82
+  4    3400         32.39       82.07    0.82
+  4    3600         31.31       82.15    0.82
+  4    3800         30.91       82.15    0.82
+  5    4000         30.07       82.18    0.82
+  5    4200         29.35       82.34    0.82
+  6    4400         28.68       82.42    0.82
+  6    4600         28.08       82.63    0.83
+  6    4800         27.68       82.68    0.83
+  7    5000         27.23       82.60    0.83
+  7    5200         26.77       82.79    0.83
+  8    5400         25.98       82.82    0.83
+  8    5600         25.97       82.90    0.83
+  9    5800         25.36       82.84    0.83
+  9    6000         25.09       83.05    0.83
+  9    6200         24.42       83.08    0.83
+ 10    6400         24.30       83.21    0.83
+ 10    6600         23.91       83.32    0.83
+ 11    6800         23.82       83.35    0.83
+ 11    7000         23.15       83.48    0.83
+ 11    7200         23.36       83.69    0.84
+ 12    7400         23.15       83.64    0.84
+ 12    7600         22.44       83.66    0.84
+ 13    7800         22.21       83.90    0.84
+ 13    8000         21.64       83.90    0.84
+ 13    8200         22.12       83.96    0.84
+ 14    8400         21.64       84.01    0.84
+ 14    8600         21.28       84.01    0.84
+ 15    8800         21.12       84.22    0.84
+ 15    9000         20.92       84.19    0.84
+ 16    9200         20.57       84.09    0.84
+ 16    9400         20.14       84.04    0.84
+ 16    9600         20.49       84.30    0.84
+ 17    9800         20.23       84.25    0.84
+ 17   10000         19.90       84.33    0.84
+ 18   10200         19.84       84.25    0.84
+ 18   10400         19.22       84.22    0.84
+ 18   10600         19.78       84.19    0.84
+ 19   10800         19.28       84.25    0.84
+ 19   11000         18.81       84.30    0.84
+ 20   11200         19.02       84.33    0.84
+ 20   11400         18.98       84.22    0.84
+ 20   11600         18.46       84.38    0.84
+ 21   11800         18.24       84.38    0.84
+ 21   12000         18.23       84.33    0.84
+ 22   12200         17.94       84.33    0.84
+ 22   12400         18.42       84.30    0.84
+ 23   12600         17.93       84.25    0.84
+ 23   12800         17.59       84.22    0.84
+ 23   13000         17.83       84.17    0.84
+ 24   13200         17.17       84.22    0.84
+[38;5;2m✔ Saved pipeline to output directory[0m
+spacy_proj2/training/model-last
+================
+Categorization scores: 0.8438036149122214
+ auc_per_type: {'POS': 0.9053461074340878, 'NEG': 0.9053461074340878}
+model_uri: runs:/d35bac13ab1d4819b59f9e1fc4ed869e/model
+Experiment finished in 239.723 second(s)
+
+01:03:41.685 | INFO    | Task run 'spacy_run_experiment-1' - Finished in state Completed()
+01:03:41.758 | INFO    | Flow run 'private-wapiti' - Created task run 'spacy_run_experiment-2' for task 'spacy_run_experiment'
+01:03:41.761 | INFO    | Flow run 'private-wapiti' - Executing 'spacy_run_experiment-2' immediately...
+
+Starting experiment [optimizer Adam.v1, data [2021]] in ./spacy_proj...
+
+Preprocessing dataset...
+ Preprocessed!
+
+Balancing dataset...
+ by sentiment
+1    57242
+0     9425
+
+Total: 66667 // Min subset: 9425 // Split: train 15080 + dev 3771
+ Data saved to ./spacy_proj/corpus/ and ready for training.
+
+[38;5;4mℹ Saving to output directory: spacy_proj/training[0m
+[38;5;4mℹ Using CPU[0m
+[1m
+=========================== Initializing pipeline ===========================[0m
+[38;5;2m✔ Initialized pipeline[0m
+[1m
+============================= Training pipeline =============================[0m
+[38;5;4mℹ Pipeline: ['textcat'][0m
+[38;5;4mℹ Initial learn rate: 0.0001[0m
+E    #       LOSS TEXTCAT  CATS_SCORE  SCORE 
+---  ------  ------------  ----------  ------
+  0       0          0.25       60.97    0.61
+  0     200         48.66       66.36    0.66
+  0     400         46.83       75.31    0.75
+  0     600         44.55       77.22    0.77
+  0     800         42.20       78.99    0.79
+  0    1000         40.65       79.67    0.80
+  0    1200         39.39       81.03    0.81
+  0    1400         37.63       81.17    0.81
+  0    1600         36.10       81.59    0.82
+  0    1800         35.08       81.61    0.82
+  1    2000         31.81       82.23    0.82
+  1    2200         30.72       82.39    0.82
+  1    2400         30.30       82.39    0.82
+  2    2600         28.17       82.36    0.82
+  2    2800         27.32       82.52    0.83
+  3    3000         26.52       82.82    0.83
+  3    3200         25.53       82.79    0.83
+  4    3400         25.04       83.16    0.83
+  4    3600         23.98       83.35    0.83
+  4    3800         23.80       83.40    0.83
+  5    4000         23.14       83.53    0.84
+  5    4200         22.45       83.77    0.84
+  6    4400         22.04       83.72    0.84
+  6    4600         21.44       83.88    0.84
+  6    4800         21.22       84.09    0.84
+  7    5000         20.77       84.06    0.84
+  7    5200         20.44       84.11    0.84
+  8    5400         19.65       84.14    0.84
+  8    5600         19.77       84.19    0.84
+  9    5800         19.42       84.11    0.84
+  9    6000         19.04       84.09    0.84
+  9    6200         18.42       83.93    0.84
+ 10    6400         18.44       84.24    0.84
+ 10    6600         18.05       84.14    0.84
+ 11    6800         17.88       84.06    0.84
+ 11    7000         17.25       84.11    0.84
+ 11    7200         17.78       84.22    0.84
+ 12    7400         17.47       84.14    0.84
+ 12    7600         16.70       84.19    0.84
+ 13    7800         16.78       84.22    0.84
+ 13    8000         15.90       84.22    0.84
+[38;5;2m✔ Saved pipeline to output directory[0m
+spacy_proj/training/model-last
+================
+Categorization scores: 0.8424461032811543
+ auc_per_type: {'POS': 0.9051233295172301, 'NEG': 0.9051233295172301}
+model_uri: runs:/fa31fca89b574d49b8f707fa53b9d712/model
+Experiment finished in 148.055 second(s)
+
+01:06:09.903 | INFO    | Task run 'spacy_run_experiment-2' - Finished in state Completed()
+01:06:09.948 | INFO    | Flow run 'private-wapiti' - Created task run 'spacy_run_experiment-3' for task 'spacy_run_experiment'
+01:06:09.949 | INFO    | Flow run 'private-wapiti' - Executing 'spacy_run_experiment-3' immediately...
+
+Starting experiment [optimizer RAdam.v1, data [2021]] in ./spacy_proj2...
+
+Preprocessing dataset...
+ Preprocessed!
+
+Balancing dataset...
+ by sentiment
+1    57242
+0     9425
+
+Total: 66667 // Min subset: 9425 // Split: train 15080 + dev 3771
+ Data saved to ./spacy_proj2/corpus/ and ready for training.
+
+[38;5;4mℹ Saving to output directory: spacy_proj2/training[0m
+[38;5;4mℹ Using CPU[0m
+[1m
+=========================== Initializing pipeline ===========================[0m
+[38;5;2m✔ Initialized pipeline[0m
+[1m
+============================= Training pipeline =============================[0m
+[38;5;4mℹ Pipeline: ['textcat'][0m
+[38;5;4mℹ Initial learn rate: 0.0001[0m
+E    #       LOSS TEXTCAT  CATS_SCORE  SCORE 
+---  ------  ------------  ----------  ------
+  0       0          0.25       49.93    0.50
+  0     200         49.76       64.90    0.65
+  0     400         49.10       74.63    0.75
+  0     600         47.96       75.07    0.75
+  0     800         46.39       77.06    0.77
+  0    1000         44.96       76.97    0.77
+  0    1200         43.66       80.00    0.80
+  0    1400         41.81       80.21    0.80
+  0    1600         40.02       80.32    0.80
+  0    1800         38.61       80.72    0.81
+  1    2000         35.56       81.70    0.82
+  1    2200         34.04       81.94    0.82
+  1    2400         33.13       82.21    0.82
+  2    2600         30.82       82.07    0.82
+  2    2800         29.74       82.28    0.82
+  3    3000         28.69       82.52    0.83
+  3    3200         27.53       82.60    0.83
+  4    3400         26.87       82.87    0.83
+  4    3600         25.67       82.87    0.83
+  4    3800         25.40       82.84    0.83
+  5    4000         24.60       82.95    0.83
+  5    4200         23.84       83.16    0.83
+  6    4400         23.33       83.48    0.83
+  6    4600         22.65       83.61    0.84
+  6    4800         22.38       83.88    0.84
+  7    5000         21.85       83.96    0.84
+  7    5200         21.48       84.09    0.84
+  8    5400         20.64       84.01    0.84
+  8    5600         20.70       84.14    0.84
+  9    5800         20.30       84.11    0.84
+  9    6000         19.86       84.22    0.84
+  9    6200         19.24       84.09    0.84
+ 10    6400         19.21       84.11    0.84
+ 10    6600         18.78       84.19    0.84
+ 11    6800         18.61       84.19    0.84
+ 11    7000         17.93       84.22    0.84
+ 11    7200         18.44       84.19    0.84
+ 12    7400         18.09       84.14    0.84
+ 12    7600         17.31       84.14    0.84
+[38;5;2m✔ Saved pipeline to output directory[0m
+spacy_proj2/training/model-last
+================
+Categorization scores: 0.8422124802593747
+ auc_per_type: {'POS': 0.9048105403208339, 'NEG': 0.904810540320834}
+model_uri: runs:/aa56d40e0b3e4e829b1e8986f944fa8f/model
+Experiment finished in 152.189 second(s)
+
+01:08:42.207 | INFO    | Task run 'spacy_run_experiment-3' - Finished in state Completed()
+01:08:42.467 | INFO    | Flow run 'private-wapiti' - Created task run 'spacy_run_experiment-4' for task 'spacy_run_experiment'
+01:08:42.469 | INFO    | Flow run 'private-wapiti' - Executing 'spacy_run_experiment-4' immediately...
+
+Starting experiment [optimizer Adam.v1, data [2021]] in ./spacy_proj...
+
+Preprocessing dataset...
+ Preprocessed!
+
+Balancing dataset...
+ by sentiment
+1    57242
+0     9425
+
+Total: 66667 // Min subset: 9425 // Split: train 15080 + dev 3771
+ Data saved to ./spacy_proj/corpus/ and ready for training.
+
+[38;5;4mℹ Saving to output directory: spacy_proj/training[0m
+[38;5;4mℹ Using CPU[0m
+[1m
+=========================== Initializing pipeline ===========================[0m
+[38;5;2m✔ Initialized pipeline[0m
+[1m
+============================= Training pipeline =============================[0m
+[38;5;4mℹ Pipeline: ['textcat'][0m
+[38;5;4mℹ Initial learn rate: 0.0004[0m
+E    #       LOSS TEXTCAT  CATS_SCORE  SCORE 
+---  ------  ------------  ----------  ------
+  0       0          0.25       60.97    0.61
+  0     200         45.60       70.16    0.70
+  0     400         40.58       78.91    0.79
+  0     600         35.22       80.15    0.80
+  0     800         33.03       81.01    0.81
+  0    1000         31.38       81.44    0.81
+  0    1200         30.59       82.35    0.82
+  0    1400         29.32       82.39    0.82
+  0    1600         28.13       83.11    0.83
+  0    1800         27.55       83.35    0.83
+  1    2000         21.66       83.61    0.84
+  1    2200         21.14       83.77    0.84
+  1    2400         21.77       83.76    0.84
+  2    2600         18.40       83.74    0.84
+  2    2800         18.10       83.80    0.84
+  3    3000         17.09       84.22    0.84
+  3    3200         16.14       84.09    0.84
+  4    3400         15.94       83.77    0.84
+  4    3600         14.55       83.53    0.84
+  4    3800         14.55       83.69    0.84
+  5    4000         13.90       83.95    0.84
+  5    4200         13.23       83.56    0.84
+  6    4400         12.94       83.53    0.84
+  6    4600         12.26       83.40    0.83
+[38;5;2m✔ Saved pipeline to output directory[0m
+spacy_proj/training/model-last
+================
+Categorization scores: 0.8422162084732353
+ auc_per_type: {'POS': 0.9059654975514119, 'NEG': 0.9059654975514119}
+model_uri: runs:/b56cb579753a47a99ae5422d2f349a58/model
+Experiment finished in 97.385 second(s)
+
+01:10:19.962 | INFO    | Task run 'spacy_run_experiment-4' - Finished in state Completed()
+01:10:19.990 | INFO    | Flow run 'private-wapiti' - Created task run 'spacy_run_experiment-5' for task 'spacy_run_experiment'
+01:10:19.991 | INFO    | Flow run 'private-wapiti' - Executing 'spacy_run_experiment-5' immediately...
+
+Starting experiment [optimizer RAdam.v1, data [2021]] in ./spacy_proj2...
+
+Preprocessing dataset...
+ Preprocessed!
+
+Balancing dataset...
+ by sentiment
+1    57242
+0     9425
+
+Total: 66667 // Min subset: 9425 // Split: train 15080 + dev 3771
+ Data saved to ./spacy_proj2/corpus/ and ready for training.
+
+[38;5;4mℹ Saving to output directory: spacy_proj2/training[0m
+[38;5;4mℹ Using CPU[0m
+[1m
+=========================== Initializing pipeline ===========================[0m
+[38;5;2m✔ Initialized pipeline[0m
+[1m
+============================= Training pipeline =============================[0m
+[38;5;4mℹ Pipeline: ['textcat'][0m
+[38;5;4mℹ Initial learn rate: 0.0004[0m
+E    #       LOSS TEXTCAT  CATS_SCORE  SCORE 
+---  ------  ------------  ----------  ------
+  0       0          0.25       49.93    0.50
+  0     200         49.08       65.99    0.66
+  0     400         46.74       76.94    0.77
+  0     600         42.97       78.30    0.78
+  0     800         39.23       80.19    0.80
+  0    1000         36.62       81.06    0.81
+  0    1200         34.73       81.83    0.82
+  0    1400         32.55       82.07    0.82
+  0    1600         30.78       82.52    0.83
+  0    1800         29.75       82.55    0.83
+  1    2000         24.59       83.29    0.83
+  1    2200         23.72       83.40    0.83
+  1    2400         23.95       83.63    0.84
+  2    2600         20.46       83.80    0.84
+  2    2800         20.00       83.85    0.84
+  3    3000         18.85       84.22    0.84
+  3    3200         17.74       83.98    0.84
+  4    3400         17.47       84.04    0.84
+  4    3600         15.88       83.74    0.84
+  4    3800         15.90       83.82    0.84
+  5    4000         15.08       84.14    0.84
+  5    4200         14.33       83.82    0.84
+  6    4400         14.03       83.93    0.84
+  6    4600         13.19       83.58    0.84
+[38;5;2m✔ Saved pipeline to output directory[0m
+spacy_proj2/training/model-last
+================
+Categorization scores: 0.8422167410608332
+ auc_per_type: {'POS': 0.9058316057730983, 'NEG': 0.9058316057730984}
+model_uri: runs:/cca188f6714343199010098f5a624851/model
+Experiment finished in 101.853 second(s)
+
+01:12:01.937 | INFO    | Task run 'spacy_run_experiment-5' - Finished in state Completed()
+
+Loading dataset...
+
+Filtered number of records ([2022]): 58754 / 60525 = 97.07%
+
+ by rating
+5.0    38971
+4.0    11255
+3.0     4726
+2.0     2047
+1.0     1755
+
+ by sentiment
+1    50226
+0     8528
+01:12:02.276 | INFO    | Flow run 'private-wapiti' - Created task run 'spacy_test_model-0' for task 'spacy_test_model'
+01:12:02.277 | INFO    | Flow run 'private-wapiti' - Executing 'spacy_test_model-0' immediately...
+
+Testing model ./spacy_proj, preprocess: True
+
+Apply spacy_Sentiment finished in 22.287 second(s)
+[[ 7096  1432]
+ [ 8345 41881]]
+tn, fp, fn, tp = 7096 1432 8345 41881
+              precision    recall  f1-score   support
+
+           0       0.46      0.83      0.59      8528
+           1       0.97      0.83      0.90     50226
+
+    accuracy                           0.83     58754
+   macro avg       0.71      0.83      0.74     58754
+weighted avg       0.89      0.83      0.85     58754
+
+01:12:25.027 | INFO    | Task run 'spacy_test_model-0' - Finished in state Completed()
+01:12:25.055 | INFO    | Flow run 'private-wapiti' - Created task run 'run_register_model-0' for task 'run_register_model'
+01:12:25.056 | INFO    | Flow run 'private-wapiti' - Executing 'run_register_model-0' immediately...
+
+Registering best model...
+Best performing models from run_id d35bac13ab1d4819b59f9e1fc4ed869e, {'training.optimizer.use_averages': 'False', 'training.dropout': '0.1', 'training.optimizer.learn_rate': '5e-05', 'min_subset': '9425', 'training.optimizer.L2': '0.0001', 'years': '[2021]', 'optimizer': 'RAdam.v1', 'training.optimizer.eps': '1e-08'}
+Best performing models from run_id fa31fca89b574d49b8f707fa53b9d712, {'training.optimizer.use_averages': 'False', 'training.dropout': '0.1', 'training.optimizer.learn_rate': '0.0001', 'min_subset': '9425', 'training.optimizer.L2': '0.0001', 'years': '[2021]', 'optimizer': 'Adam.v1', 'training.optimizer.eps': '1e-08'}
+Best performing models from run_id cca188f6714343199010098f5a624851, {'training.optimizer.use_averages': 'False', 'training.dropout': '0.1', 'training.optimizer.learn_rate': '0.0004', 'min_subset': '9425', 'training.optimizer.L2': '0.0001', 'years': '[2021]', 'optimizer': 'RAdam.v1', 'training.optimizer.eps': '1e-08'}
+
+Best results: run_id d35bac13ab1d4819b59f9e1fc4ed869e, metrics {'speed': 381519.8470406636, 'cats_score': 0.8438036149122214, 'cats_macro_f': 0.8438036149122214, 'auc_per_type_POS': 0.9053461074340878, 'cats_macro_p': 0.8438434142677502, 'auc_per_type_NEG': 0.9053461074340878}
+params: {'training.optimizer.use_averages': 'False', 'training.dropout': '0.1', 'training.optimizer.learn_rate': '5e-05', 'min_subset': '9425', 'training.optimizer.L2': '0.0001', 'years': '[2021]', 'optimizer': 'RAdam.v1', 'training.optimizer.eps': '1e-08'}
+Registered model 'spacy-textcat-reviews' already exists. Creating a new version of this model...
+Created version '2' of model 'spacy-textcat-reviews'.
+
+Model registered: <ModelVersion: aliases=[], creation_timestamp=1721859145159, current_stage='None', description=None, last_updated_timestamp=1721859145159, name='spacy-textcat-reviews', run_id='d35bac13ab1d4819b59f9e1fc4ed869e', run_link=None, source='file:///home/dmytro/apps/remote_repos/mlops-spacy-sentiment-analysis/train_model/mlruns/635290928143010730/d35bac13ab1d4819b59f9e1fc4ed869e/artifacts/model', status='READY', status_message=None, tags={}, user_id=None, version=2>
+ Name: spacy-textcat-reviews Version: 2 run_id: d35bac13ab1d4819b59f9e1fc4ed869e
+
+Model saved to ./model/model-best
+
+
+Extra tests!
+
+Loading dataset...
+
+Filtered number of records ([2022]): 58754 / 60525 = 97.07%
+
+ by rating
+5.0    38971
+4.0    11255
+3.0     4726
+2.0     2047
+1.0     1755
+
+ by sentiment
+1    50226
+0     8528
+01:12:25.770 | INFO    | Task run 'run_register_model-0' - Created task run 'spacy_test_model-1' for task 'spacy_test_model'
+01:12:25.772 | INFO    | Task run 'run_register_model-0' - Executing 'spacy_test_model-1' immediately...
+
+Testing model ./spacy_proj, preprocess: False
+
+Apply spacy_Sentiment finished in 17.639 second(s)
+[[ 6912  1616]
+ [10112 40114]]
+tn, fp, fn, tp = 6912 1616 10112 40114
+              precision    recall  f1-score   support
+
+           0       0.41      0.81      0.54      8528
+           1       0.96      0.80      0.87     50226
+
+    accuracy                           0.80     58754
+   macro avg       0.68      0.80      0.71     58754
+weighted avg       0.88      0.80      0.82     58754
+
+01:12:43.613 | INFO    | Task run 'spacy_test_model-1' - Finished in state Completed()
+
+Loading dataset...
+
+Filtered number of records ([2021]): 66667 / 68739 = 96.99%
+
+ by rating
+5.0    44115
+4.0    13127
+3.0     5124
+2.0     2414
+1.0     1887
+
+ by sentiment
+1    57242
+0     9425
+01:12:43.960 | INFO    | Task run 'run_register_model-0' - Created task run 'spacy_test_model-2' for task 'spacy_test_model'
+01:12:43.961 | INFO    | Task run 'run_register_model-0' - Executing 'spacy_test_model-2' immediately...
+
+Testing model ./spacy_proj, preprocess: False
+
+Apply spacy_Sentiment finished in 19.685 second(s)
+[[ 8088  1337]
+ [11027 46215]]
+tn, fp, fn, tp = 8088 1337 11027 46215
+              precision    recall  f1-score   support
+
+           0       0.42      0.86      0.57      9425
+           1       0.97      0.81      0.88     57242
+
+    accuracy                           0.81     66667
+   macro avg       0.70      0.83      0.72     66667
+weighted avg       0.89      0.81      0.84     66667
+
+01:13:03.860 | INFO    | Task run 'spacy_test_model-2' - Finished in state Completed()
+01:13:03.904 | INFO    | Task run 'run_register_model-0' - Finished in state Completed()
+01:13:03.946 | INFO    | Flow run 'private-wapiti' - Finished in state Completed('All states completed.')
+
+Loading dataset...
+
+Filtered number of records ([2022]): 58754 / 60525 = 97.07%
+
+ by rating
+5.0    38971
+4.0    11255
+3.0     4726
+2.0     2047
+1.0     1755
+
+ by sentiment
+1    50226
+0     8528
+01:13:04.407 | INFO    | prefect.engine - Created task run 'spacy_test_model-5bd45914' for task 'spacy_test_model'
+
+Testing model ./spacy_proj, preprocess: True
+
+Apply spacy_Sentiment finished in 20.880 second(s)
+[[ 7096  1432]
+ [ 8345 41881]]
+tn, fp, fn, tp = 7096 1432 8345 41881
+              precision    recall  f1-score   support
+
+           0       0.46      0.83      0.59      8528
+           1       0.97      0.83      0.90     50226
+
+    accuracy                           0.83     58754
+   macro avg       0.71      0.83      0.74     58754
+weighted avg       0.89      0.83      0.85     58754
+
+01:13:25.495 | INFO    | Task run 'spacy_test_model-5bd45914' - Finished in state Completed()
+01:13:25.652 | INFO    | prefect.engine - Created task run 'spacy_test_model-3ec9ec51' for task 'spacy_test_model'
+
+Testing model ./spacy_proj, preprocess: False
+
+Apply spacy_Sentiment finished in 17.602 second(s)
+[[ 6912  1616]
+ [10112 40114]]
+tn, fp, fn, tp = 6912 1616 10112 40114
+              precision    recall  f1-score   support
+
+           0       0.41      0.81      0.54      8528
+           1       0.96      0.80      0.87     50226
+
+    accuracy                           0.80     58754
+   macro avg       0.68      0.80      0.71     58754
+weighted avg       0.88      0.80      0.82     58754
+
+01:13:43.461 | INFO    | Task run 'spacy_test_model-3ec9ec51' - Finished in state Completed()
+01:13:43.587 | INFO    | prefect.engine - Created task run 'spacy_test_model-ec2485db' for task 'spacy_test_model'
+
+Testing model ./spacy_proj2, preprocess: True
+
+Apply spacy_Sentiment finished in 20.768 second(s)
+[[ 7104  1424]
+ [ 8401 41825]]
+tn, fp, fn, tp = 7104 1424 8401 41825
+              precision    recall  f1-score   support
+
+           0       0.46      0.83      0.59      8528
+           1       0.97      0.83      0.89     50226
+
+    accuracy                           0.83     58754
+   macro avg       0.71      0.83      0.74     58754
+weighted avg       0.89      0.83      0.85     58754
+
+01:14:04.518 | INFO    | Task run 'spacy_test_model-ec2485db' - Finished in state Completed()
+01:14:04.637 | INFO    | prefect.engine - Created task run 'spacy_test_model-fc0dd9f8' for task 'spacy_test_model'
+
+Testing model ./spacy_proj2, preprocess: False
+
+Apply spacy_Sentiment finished in 17.628 second(s)
+[[ 6859  1669]
+ [ 9514 40712]]
+tn, fp, fn, tp = 6859 1669 9514 40712
+              precision    recall  f1-score   support
+
+           0       0.42      0.80      0.55      8528
+           1       0.96      0.81      0.88     50226
+
+    accuracy                           0.81     58754
+   macro avg       0.69      0.81      0.72     58754
+weighted avg       0.88      0.81      0.83     58754
+
+01:14:22.469 | INFO    | Task run 'spacy_test_model-fc0dd9f8' - Finished in state Completed()
+[Finished in 1050.8s]

@@ -1,0 +1,18 @@
+artifact_path: model
+flavors:
+  python_function:
+    data: model.spacy
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.spacy
+    python_version: 3.11.8
+  spacy:
+    code: null
+    data: model.spacy
+    spacy_version: 3.7.5
+mlflow_version: 2.12.2
+model_size_bytes: 2663919
+model_uuid: 1a8b5b051c55441cad0f06247cb9f99b
+run_id: d35bac13ab1d4819b59f9e1fc4ed869e
+utc_time_created: '2024-07-24 22:03:39.499174'

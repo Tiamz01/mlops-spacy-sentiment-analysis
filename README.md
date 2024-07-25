@@ -95,7 +95,7 @@ Finally docker container will be stopped.
 
 ### Monitoring
 
-Under development.
+Under development (adding Evidently AI).
 
 ### Best practices
 
@@ -110,3 +110,9 @@ Under development.
 By tuning avalable spaCy hyper parameters I managed to achive 84% accuracy.
 
 ![Trained Spacy model for Sentiment analysis: results](/screenshots/spacy-train-model.png)
+
+You can find additional information which parameners result better performance on [screenshots](/screenshots).
+
+## Next steps
+
+I plan to deploy it on my hosting and test performance with other Amazon reviews (other categories).

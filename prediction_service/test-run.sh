@@ -2,9 +2,9 @@
 echo
 echo '1. COPYING LATEST TRAINED MODEL AND SCRIPTS'
 echo
-cp -r ../model .
-cp ../preprocess.py .
-cp ../predict.py .
+cp -r ../train_model/model .
+cp ../train_model/preprocess.py .
+cp ../train_model/predict.py .
 
 echo
 echo '2. BUILDING DOCKER IMAGE...'

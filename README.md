@@ -74,9 +74,11 @@ Thanks to MLOps ZoomCamp for the reason to learn many new tools!
 
 ### :arrow_heading_down: Dataset
 
-Dataset files are automatically downloaded from [this repo](https://github.com/dmytrovoytko/reviews-sentiment-dataset), they are in parquet format and ~15mb.
+Dataset files are automatically downloaded from [this repo](https://github.com/dmytrovoytko/reviews-sentiment-dataset), they are in parquet format and ~20mb each.
 If you want to work with additional files, you can put them into `./train_model/data/` directory and change function `load_data_from_parquet()` in `./train_model/orchestrate.py`.
-Samples of each partition (by year) you can see in `./train_model/data/` directory.
+Samples of each partition (by years) you can see in `./train_model/data/` directory.
+
+Data preprocessing includes filtering out outliers - too short (<25) and too long (>3000) reviews. Majority of retings are positive (4 and 5), so I added balancing positive and negative sentiments to improve prediction accuracy.
 
 ![Dataset details](/screenshots/dataset-details.png)
 
@@ -84,17 +86,19 @@ Samples of each partition (by year) you can see in `./train_model/data/` directo
 
 Run `bash run-train-model.sh` or go to `train_model` directory and run `python orchestrate.py`.
 This will start Prefect workflow to
-- Load training data (2021)
+- load training data (2021)
 - call `spacy_run_experiment()` with different hyper parameters
-- Load testing data (2022)
-- call `spacy_test_model()`
-- finally, call `run_register_model()` to register best model, which will be saved to `./model`
+- load testing data (2022)
+- call `spacy_test_model()` to measure model performance and calculate confusion matrix
+- finally, call `run_register_model()` to register the best model, which will be saved to `./model` directory.
 
-Spacy has its own pipeline management via `project.yml` files and `config.cfg` files, so it controls how many epochs to run and when to stop to prevent overfitting. So I just call its (cli) commands and override some parameters to tune model for better performance. And MLflow tracks all experiments.
+Spacy has its own pipeline management via `project.yml` and `config.cfg` files. It controls how many epochs to run and when to stop to prevent overfitting. I call its (cli api) commands and override some parameters to tune model for better performance. And MLflow tracks all experiments, saves parameters and artifacts. Then you're able to compare metrics, including visual form.
 
 To explore results go to `train_model` directory and run `mlflow server`.
 
 ![MLFlow experiments training Spacy model for Sentiment analysis](/screenshots/mlflow-00.png)
+
+![MLFlow experiments training Spacy model for Sentiment analysis](/screenshots/mlflow-03.png)
 
 Prefect orchestration
 

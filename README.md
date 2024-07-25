@@ -61,7 +61,7 @@ Thanks to MLOps ZoomCamp for the reason to learn many new tools!
 - [Dataset](#arrow_heading_down-dataset)
 - [Train model](#train-model)
 - [Test prediction service](#test-prediction-service)
-- [Monitoring](#monitoring)
+- [Deployment and Monitoring](#deployment-and-monitoring)
 - [Best practices](#best-practices)
 
 ### :hammer_and_wrench: Setup environment
@@ -69,7 +69,7 @@ Thanks to MLOps ZoomCamp for the reason to learn many new tools!
 1. Fork this repo on GitHub.
 2. Create GitHub CodeSpace from the repo.
 3. **Start CodeSpace**, wait for `requirements.txt` installation to finish (it starts automatically, just watch & wait).
-4. If you run it locally or in virtual machine, you can use `pipenv install --dev` or `pip install -r requirements.txt` to install required packages.
+4. If you run it locally or in a virtual machine, you can use `pipenv install --dev` or `pip install -r requirements.txt` to install required packages.
 5. If you want to play with/develop the project, you can also install `pipenv run pre-commit install` to format code before committing to repo.
 
 ### :arrow_heading_down: Dataset
@@ -108,11 +108,11 @@ Finally docker container will be stopped.
 
 ![Testing prediction service in dockerl for Sentiment analysis](/screenshots/testing-prediction-service.png)
 
-### Monitoring
+### Deployment and Monitoring
 
-To deploy web service go to `prediction_service` directory and run `bash deploy.sh`.
+To deploy web service run `bash deploy-service.sh`.
 
-Under development (adding Evidently AI).
+Monitoring is under development yet (adding Evidently AI).
 
 ### Best practices
 

@@ -35,16 +35,17 @@ For this project I chose to work with a much smaller subset - only years 2020-20
 ## 🎯 Goals
 
 This is my MLOps project started during [MLOps ZoomCamp](https://github.com/DataTalksClub/mlops-zoomcamp)'24.
-And **the main goal** is straight-forward: build an end-to-end Machine Learning project: 
-- choose dataset, 
-- load & analyze data, preprocess it, 
-- train & test ML model, 
-- create a model training pipeline, 
-- deploy the model, 
-- finally monitor performance. 
-- And follow best practices!
 
-Dataset **Reviews** (original) contains user's ratings from 1 to 5. I used book review texts with ratings 1-3 as examples of negative sentiment, and 4-5 as positive. Actually "4" is a bit tricky, because many readers described partly negative reasons why they didn't gave "5". Samples are [here](/data).
+And **the main goal** is straight-forward: build an end-to-end Machine Learning project: 
+- choose dataset
+- load & analyze data, preprocess it
+- train & test ML model
+- create a model training pipeline
+- deploy the model (as a web service)
+- finally monitor performance
+- And follow MLOps best practices!
+
+Dataset **Reviews** (original) contains users' books reviews (title and text), each book rated from 1 to 5. I used book review texts with ratings 1-3 as examples of negative sentiment, and 4-5 as positive. Actually "4" is a bit tricky, because many readers described partly negative reasons why they didn't gave "5". Samples are [here](/train_model/data).
 
 Thanks to MLOps ZoomCamp for the reason to learn many new tools! 
 
@@ -52,7 +53,7 @@ Thanks to MLOps ZoomCamp for the reason to learn many new tools!
 
 - MLFlow for ML experiment tracking
 - Prefect for ML workflow orchestration
-- Docker and docker-compose. All dockerized apps use default bridge network (172.17.0.x). 
+- Docker and docker-compose
 
 ## 🚀 Instructions to reproduce
 
@@ -108,6 +109,8 @@ Finally docker container will be stopped.
 ![Testing prediction service in dockerl for Sentiment analysis](/screenshots/testing-prediction-service.png)
 
 ### Monitoring
+
+To deploy web service go to `prediction_service` directory and run `bash deploy.sh`.
 
 Under development (adding Evidently AI).
 

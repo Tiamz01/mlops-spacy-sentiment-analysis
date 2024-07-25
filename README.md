@@ -50,11 +50,11 @@ Thanks to MLOps ZoomCamp for the reason to learn many new tools!
 
 ## :toolbox: Tech stack
 
-- Docker and docker-compose. All dockerized apps use default bridge network (172.17.0.x). 
 - MLFlow for ML experiment tracking
 - Prefect for ML workflow orchestration
+- Docker and docker-compose. All dockerized apps use default bridge network (172.17.0.x). 
 
-## 🚀 Instructions to deploy
+## 🚀 Instructions to reproduce
 
 - [Setup environment](#hammer_and_wrench-setup-environment)
 - [Dataset](#arrow_heading_down-dataset)
@@ -87,11 +87,24 @@ This will start Prefect workflow to
 - call `spacy_test_model()`
 - finally, call `run_register_model()` to register best model, which will be saved to `./model`
 
+Spacy has its own pipeline management via `project.yml` files and `config.cfg` files, so it controls how many epochs to run and when to stop to prevent overfitting. So I just call its (cli) commands and override some parameters to tune model for better performance. And MLflow tracks all experiments.
+
+To explore results go to `train_model` directory and run `mlflow server`.
+
+![MLFlow experiments training Spacy model for Sentiment analysis](/screenshots/mlflow-00.png)
+
+Prefect orchestration
+
+![Prefect orchestration](/screenshots/prefect-orchestration.png)
+
+
 ### Test prediction service
 
 Run `bash test-service.sh` or go to `prediction_service` directory and run `bash test-run.sh`.
 This will copy best model and latest scripts, build docker image, run it, and make curl requests.
 Finally docker container will be stopped.
+
+![Testing prediction service in dockerl for Sentiment analysis](/screenshots/testing-prediction-service.png)
 
 ### Monitoring
 

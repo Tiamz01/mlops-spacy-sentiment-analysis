@@ -18,8 +18,8 @@ COPY preprocess.py .
 COPY predict.py . 
 COPY ./model ./model
 
-CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0", "--port=5000"]
+# CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0", "--port=5000"]
 
-# EXPOSE 5555
+EXPOSE 5000
 
-# ENTRYPOINT [ "gunicorn", "--bind=0.0.0.0:5555", "app:app" ]
+ENTRYPOINT [ "gunicorn", "--bind=0.0.0.0:5000", "app:app" ]

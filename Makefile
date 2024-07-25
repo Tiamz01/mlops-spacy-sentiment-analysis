@@ -5,9 +5,9 @@ test:
 	pipenv run pytest train_model/tests/
 
 quality_checks:
-	pipenv run isort tests/
-	pipenv run black tests/
-# 	pipenv run pylint --recursive=y tests/
+	pipenv run isort train_model/tests/
+	pipenv run black train_model/tests/
+# 	pipenv run pylint --recursive=y train_model/tests/
 
 build: quality_checks test
 	docker build -t ${LOCAL_IMAGE_NAME} .

@@ -71,11 +71,13 @@ Thanks to MLOps ZoomCamp for the reason to learn many new tools!
 4. You can use `pipenv install --dev` or `pip install -r requirements.txt` to install required packages.
 5. If you want to play with/develop the project, you can also install `pipenv run pre-commit install` to format code before committing to repo.
 
-
 ### :arrow_heading_down: Dataset
 
 Dataset files are automatically downloaded from [this repo](https://github.com/dmytrovoytko/reviews-sentiment-dataset), they are in parquet format and ~15mb.
 If you want to work with additional files, you can put them into `./train_model/data/` directory and change function `load_data_from_parquet()` in `./train_model/orchestrate.py`.
+Samples of each partition (by year) you can see in `./train_model/data/` directory.
+
+![Dataset details](/screenshots/dataset-details.png)
 
 ### Train model
 
@@ -96,7 +98,6 @@ To explore results go to `train_model` directory and run `mlflow server`.
 Prefect orchestration
 
 ![Prefect orchestration](/screenshots/prefect-orchestration.png)
-
 
 ### Test prediction service
 
@@ -129,3 +130,17 @@ You can find additional information which parameners result better performance o
 ## Next steps
 
 I plan to deploy it on my hosting and test performance with other Amazon reviews (other categories).
+
+Stay tuned!
+
+## Support
+
+🙏 Thank you for your attention and time!
+
+- If you experience any issue while following this instruction (or something left unclear), please add it to [Issues](/issues), I'll be glad to help/fix. And your feedback, questions & suggestions are welcome as well!
+- Feel free to fork and submit pull requests.
+
+If you find this project helpful, please ⭐️star⭐️ my repo 
+https://github.com/dmytrovoytko/mlops-spacy-sentiment-analysis to help other people discover it 🙏
+
+Made with ❤️ in Ukraine 🇺🇦 Dmytro Voytko

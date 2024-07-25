@@ -1,5 +1,6 @@
 # from pathlib import Path
 
+import os
 import pandas as pd
 
 import spacy
@@ -45,6 +46,8 @@ def spacy_prepare_training(df, DATA_DIR, params):
 
     params['min_subset'] = min_len
     nlp = spacy.blank('en')
+
+    os.makedirs(f"{DATA_DIR}/corpus", exist_ok=True)    
     
     convert(nlp, train_data, f"{DATA_DIR}/corpus/train.spacy")
     convert(nlp, dev_data, f"{DATA_DIR}/corpus/dev.spacy")

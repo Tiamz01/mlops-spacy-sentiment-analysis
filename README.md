@@ -109,4 +109,4 @@ Under development.
 
 By tuning avalable spaCy hyper parameters I managed to achive 84% accuracy.
 
-![Trained Spacy model for Sentiment analysis: results](/screenshots/spacy-test-model.png)
+![Trained Spacy model for Sentiment analysis: results](/screenshots/spacy-train-model.png)

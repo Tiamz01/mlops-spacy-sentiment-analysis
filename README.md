@@ -55,3 +55,58 @@ Thanks to MLOps ZoomCamp for the reason to learn many new tools!
 - Prefect for ML workflow orchestration
 
 ## 🚀 Instructions to deploy
+
+- [Setup environment](#hammer_and_wrench-setup-environment)
+- [Dataset](#arrow_heading_down-dataset)
+- [Train model](#train-model)
+- [Test prediction service](#test-prediction-service)
+- [Monitoring](#monitoring)
+- [Best practices](#best-practices)
+
+### :hammer_and_wrench: Setup environment
+
+1. Fork this repo on GitHub.
+2. Create GitHub CodeSpace from the repo.
+3. **Start CodeSpace**
+4. You can use `pipenv install --dev` or `pip install -r requirements.txt` to install required packages.
+5. If you want to play with/develop the project, you can also install `pipenv run pre-commit install` to format code before committing to repo.
+
+
+### :arrow_heading_down: Dataset
+
+Dataset files are automatically downloaded from [this repo](https://github.com/dmytrovoytko/reviews-sentiment-dataset), they are in parquet format and ~15mb.
+If you want to work with additional files, you can put them into `./train_model/data/` directory and change function `load_data_from_parquet()` in `./train_model/orchestrate.py`.
+
+### Train model
+
+Run `bash run-train-model.sh` or go to `train_model` directory and run `python orchestrate.py`.
+This will start Prefect workflow to
+- Load training data (2021)
+- call `spacy_run_experiment()` with different hyper parameters
+- Load testing data (2022)
+- call `spacy_test_model()`
+- finally, call `run_register_model()` to register best model, which will be saved to `./model`
+
+### Test prediction service
+
+Run `bash test-service.sh` or go to `prediction_service` directory and run `bash test-run.sh`.
+This will copy best model and latest scripts, build docker image, run it, and make curl requests.
+Finally docker container will be stopped.
+
+### Monitoring
+
+Under development.
+
+### Best practices
+
+    * [x] Unit tests
+    * [x] Integration test (== Test prediction service)
+    * [x] Code formatter (isort, black)
+    * [x] Makefile
+    * [x] Pre-commit hooks 
+
+## Current results of training
+
+By tuning avalable spaCy hyper parameters I managed to achive 84% accuracy.
+
+![Trained Spacy model for Sentiment analysis: results](/screenshots/spacy-test-model.png)

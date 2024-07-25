@@ -204,11 +204,11 @@ def run_register_model(data_path: str, top_n: int =1):
         print(f'\n\nExtra tests!')
         df = load_data_from_parquet([2022]) # train on 2020/2021, test on 2022
         DATA_DIR = './spacy_proj'
-        spacy_test_model(df, DATA_DIR, preprocess=False)
+        spacy_test_model(df, DATA_DIR, preprocess=True)
 
         df = load_data_from_parquet([2021]) # train on 2020/2021, test on 2022
         DATA_DIR = './spacy_proj'
-        spacy_test_model(df, DATA_DIR, preprocess=False)
+        spacy_test_model(df, DATA_DIR, preprocess=True)
 
 
 @flow
@@ -270,8 +270,8 @@ def ml_workflow():
 if __name__ == '__main__':
 
     # run Prefect workflow
+    # this is the main and required
     ml_workflow()
-
 
     # Extra Test model
     TESTING_MODE1 = True # False
@@ -280,11 +280,13 @@ if __name__ == '__main__':
 
         DATA_DIR = './spacy_proj'
         spacy_test_model(df, DATA_DIR, preprocess=True)
-        spacy_test_model(df, DATA_DIR, preprocess=False)
+        if DEBUG:
+            spacy_test_model(df, DATA_DIR, preprocess=False)
 
         DATA_DIR = './spacy_proj2'
         spacy_test_model(df, DATA_DIR, preprocess=True)
-        spacy_test_model(df, DATA_DIR, preprocess=False)
+        if DEBUG:
+            spacy_test_model(df, DATA_DIR, preprocess=False)
 
     TESTING_MODE2 = False # True
     if TESTING_MODE2:

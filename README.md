@@ -68,8 +68,8 @@ Thanks to MLOps ZoomCamp for the reason to learn many new tools!
 
 1. Fork this repo on GitHub.
 2. Create GitHub CodeSpace from the repo.
-3. **Start CodeSpace**
-4. You can use `pipenv install --dev` or `pip install -r requirements.txt` to install required packages.
+3. **Start CodeSpace**, wait for `requirements.txt` installation to finish (it starts automatically, just watch & wait).
+4. If you run it locally or in virtual machine, you can use `pipenv install --dev` or `pip install -r requirements.txt` to install required packages.
 5. If you want to play with/develop the project, you can also install `pipenv run pre-commit install` to format code before committing to repo.
 
 ### :arrow_heading_down: Dataset

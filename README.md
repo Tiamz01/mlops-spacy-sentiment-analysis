@@ -45,7 +45,7 @@ And **the main goal** is straight-forward: build an end-to-end Machine Learning 
 - finally monitor performance
 - And follow MLOps best practices!
 
-Dataset **Reviews** (original) contains users' books reviews (title and text), each book rated from 1 to 5. I used book review texts with ratings 1-3 as examples of negative sentiment, and 4-5 as positive. Actually "4" is a bit tricky, because many readers described partly negative reasons why they didn't gave "5". Samples are [here](/train_model/data).
+Dataset **Reviews** (original) contains users' books reviews (title and text), each book rated from 1 to 5. I used book review texts rated 1-3 as examples of negative sentiment, and 4-5 as positive. IMHO "4" is a bit tricky, because many readers described partly negative reasons why they didn't give "5". Samples are [here](/train_model/data).
 
 Thanks to MLOps ZoomCamp for the reason to learn many new tools! 
 
